@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1877F2;
+  --color-primary-hover: #166FE5;
+  --color-primary-light: #EBF5FF;
+  --color-primary-dark: #1360C7;
+  --color-bg-page: #F0F2F5;
+  --color-bg-card: #FFFFFF;
+  --color-bg-input: #F0F2F5;
+  --color-bg-hover: #F0F2F5;
+  --color-bg-active: #E4E6EB;
+  --color-text-primary: #050505;
+  --color-text-secondary: #65676B;
+  --color-text-tertiary: #8A8D91;
+  --color-online: #31A24C;
+  --color-error: #DC3545;
+  --color-warning: #F0AD4E;
+  --color-divider: #CED0D4;
+  --color-msg-mine: #0084FF;
+  --color-msg-other: #E4E6EB;
+  --color-reaction-love: #F33E58;
+  --color-reaction-haha: #F7B928;
+  --color-reaction-angry: #E9710F;
+  --font-family-sans: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', Helvetica, Arial, sans-serif;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-dropdown: 0 2px 12px rgba(0, 0, 0, 0.15);
+  --shadow-modal: 0 12px 28px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-bg-page);
+    color: var(--color-text-primary);
+  }
+}
+
+.dark {
+  --color-bg-page: #18191A;
+  --color-bg-card: #242526;
+  --color-bg-input: #3A3B3C;
+  --color-bg-hover: #3A3B3C;
+  --color-bg-active: #4E4F50;
+  --color-text-primary: #E4E6EB;
+  --color-text-secondary: #B0B3B8;
+  --color-divider: #3E4042;
+  --color-primary: #2D88FF;
+  --color-msg-other: #3A3B3C;
+}
