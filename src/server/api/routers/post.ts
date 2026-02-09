@@ -48,7 +48,7 @@ export const postRouter = createTRPCRouter({
               isVerified: true,
             },
           },
-          _count: { select: { comments: true, reactions: true } },
+          _count: { select: { comments: true } },
         },
       })
 

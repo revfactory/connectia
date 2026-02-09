@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
@@ -20,6 +20,14 @@ import { trpc } from '@/lib/trpc'
 type SearchTab = 'all' | 'users' | 'posts'
 
 export default function SearchPage() {
+  return (
+    <Suspense fallback={<SearchSkeleton />}>
+      <SearchContent />
+    </Suspense>
+  )
+}
+
+function SearchContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const initialQuery = searchParams.get('q') ?? ''
@@ -304,7 +312,6 @@ interface PostSearchCardProps {
     }
     _count: {
       comments: number
-      reactions: number
     }
   }
   query: string
@@ -363,9 +370,6 @@ function PostSearchCard({ post, query }: PostSearchCardProps) {
 
       {/* 반응/댓글 수 */}
       <div className="flex items-center gap-3 mt-2 text-[13px] text-[var(--color-text-secondary)]">
-        {post._count.reactions > 0 && (
-          <span>반응 {post._count.reactions}개</span>
-        )}
         {post._count.comments > 0 && (
           <span>댓글 {post._count.comments}개</span>
         )}
