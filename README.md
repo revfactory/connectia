@@ -171,4 +171,4 @@ pnpm db:seed      # 시드 데이터 삽입
 
 ## 라이선스
 
-ISC
+[MIT](LICENSE)
